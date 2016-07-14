@@ -1,0 +1,39 @@
+Title: <abbr title="Hyper Text Markup Language">HTML</abbr> Statis
+Author: Taufik Nurrohman
+URL: http://latitudu.com
+Version: 1.0.0
+
+====
+
+> Menanamkan dokumen HTML ke dalam konten.
+
+Plugin ini memungkinkan Anda untuk menanam dokumen HTML ke dalam konten pos. Plugin ini akan mengecek apakah Anda memiliki sebuah tag `<html>` di dalam konten pos atau tidak. Jika ada, maka dokumen HTML halaman pos Anda secara keseluruhan akan digantikan oleh konten pos.
+
+Pastikan untuk menonaktifkan bidang parser HTML pada editor pos.
+
+Beberapa kode pintasan spesial tersedia untuk digunakan di dalam dokumen:
+
+ - ``{{config.key}}`` → adalah sama dengan `$config->key`
+ - ``{{speak.key}}`` → adalah sama dengan `$speak->key`
+ - ``{{this.key}}`` → adalah sama dengan `$config->{$config->page_type}->key`
+
+Contoh:
+
+~~~ .html
+<!DOCTYPE html>
+<html dir="`{{config.language_direction}}`">
+  <head>
+    <meta charset="`{{config.charset}}`">
+    <link href="`{{config.url}}`/favicon.ico" rel="icon">
+    <title>`{{config.page_title}}`</title>
+  </head>
+  <body>
+    <h1>`{{this.title}}`</h1>
+    <div>`{{this.description}}`</div>
+  </body>
+</html>
+~~~
+
+*[HTML]: Hyper Text Markup Language
+
+<!-- block:donate -->
